@@ -1,22 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 const Profile = (props) => {
   console.log(props);
+  const [redrt, setRedrt] = useState(false);
+
+  // const redirct = () => {
+  //   if (redrt) {
+  //     return <Redirect to='/' />;
+  //   }
+  // };
   return (
     <div className='container'>
-      Profile
       <Link
         to={{
-          pathname: '/Profile/Post',
-          hash: '#hash',
-          search: '?search=value',
+          pathname: `/post`,
         }}
       >
-        Post
+        From Profile to Post
       </Link>
     </div>
   );
 };
-
 export default Profile;
