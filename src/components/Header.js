@@ -3,17 +3,41 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header>
-      <div className='d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm'>
-        <h5 className='my-0 mr-md-auto font-weight-normal'>Company name</h5>
-        <nav className='my-2 my-md-0 mr-md-3'>
-          <NavLink className='p-2' to='/'>
-            Home
-          </NavLink>{' '}
-          -
-        </nav>
-      </div>
-    </header>
+    <>
+      <header className='b d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom'>
+        <NavLink
+          to='/'
+          className='d-flex align-items-center mb-3 mb-md-0
+              me-md-auto text-dark text-decoration-none'
+        >
+          <svg className='bi me-2' width='40' height='32'>
+            <use src='src/assets/107.svg'></use>
+          </svg>
+          <span className='fs-4'>OneOseven</span>
+        </NavLink>
+
+        <ul className='nav nav-pills'>
+          <li className='nav-item'>
+            <NavLink to='/' className='nav-link p-2 selected'>
+              Home
+            </NavLink>
+          </li>
+
+          <li className='nav-item'>
+            <NavLink
+              to={{
+                pathname: '/Profile',
+                hash: '#Profile',
+                search: '?query=abc',
+              }}
+              className='nav-link'
+            >
+              Profile
+            </NavLink>
+          </li>
+        </ul>
+      </header>
+    </>
   );
 };
 

@@ -1,17 +1,28 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
+
+import Home from './components/Home';
+import Profile from './components/Profile';
 
 import Header from './components/Header';
-import Home from './components/Home';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <div className='container'>
-        <Route path='/' component={Home} />
-      </div>
-    </BrowserRouter>
+    <>
+      <HashRouter>
+        <Header />
+
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='Profile' exact element={<Profile />} />
+          <Route
+            render={() => {
+              <div>404</div>;
+            }}
+          />
+        </Routes>
+      </HashRouter>
+    </>
   );
 };
 
