@@ -15,11 +15,8 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={<Home />} />
           <Route path='Profile' exact element={<Profile />} />
-          <Route
-            render={() => {
-              <div>404</div>;
-            }}
-          />
+
+          <Route path='*' element={<div>404</div>} />
         </Routes>
       </HashRouter>
     </>
