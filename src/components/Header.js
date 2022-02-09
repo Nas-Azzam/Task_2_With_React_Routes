@@ -22,6 +22,11 @@ const Header = () => {
               Home
             </NavLink>
           </li>
+          <li className='nav-item'>
+            <NavLink to='/User' className='nav-link p-2 selected'>
+              User
+            </NavLink>
+          </li>
 
           <li className='nav-item'>
             <NavLink
